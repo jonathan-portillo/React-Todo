@@ -40,17 +40,20 @@ class App extends React.Component {
   };
 
   addTask = (taskName) => {
-    this.setState([
-      ...this.state.todoList,
-      { task: "", taskName, id: Date.now(), completed: false },
-    ]);
+    const newTodo = { task: this.state.todo, id: Date.now() };
+    this.setState({
+      todoList: [
+        ...this.state.todoList,
+        { task: taskName, id: Date.now(), completed: false },
+      ],
+    });
   };
 
   render() {
     return (
       <div>
         <h2>Today's Tasks</h2>
-        <TodoForm todo={this.state.todoList} addTask={this.addTask} />
+        <TodoForm addTask={this.addTask} />
         <TodoList
           todo={this.state.todoList}
           toggleTask={this.toggleTask}
