@@ -1,6 +1,7 @@
 import React from "react";
 
 const Todo = (props) => {
+  console.log(props);
   return (
     <div
       style={props.todo.completed ? { textDecoration: "line-through" } : null}

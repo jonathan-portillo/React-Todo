@@ -27,6 +27,7 @@ class App extends React.Component {
             ...task,
             completed: !task.completed,
           };
+        return task;
       }),
     });
   };
